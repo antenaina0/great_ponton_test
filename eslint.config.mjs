@@ -17,7 +17,8 @@ export default [
         },
         extends: [
             "plugin:prettier/recommended",
-            "next/core-web-vitals"
+            "next/core-web-vitals",
+            "plugin:storybook/recommended"
         ],
         rules: {
             ...tsConfigs.recommended.rules,
