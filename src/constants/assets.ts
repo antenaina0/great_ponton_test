@@ -11,4 +11,7 @@ export const ASSETS = {
         search: '/icons/search.svg',
         star: '/icons/star.png',
     },
+    logo: {
+        bag: '/icons/bag.svg',
+    },
 }

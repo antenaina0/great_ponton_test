@@ -19,7 +19,7 @@ export type Font = {
     lineHeight: LineHeight
 }
 
-export type FontColor = 'primary' | 'text' | 'white'
+export type FontColor = 'primary' | 'text' | 'white' | 'green'
 
 export type Color = Record<FontColor, string>
 
