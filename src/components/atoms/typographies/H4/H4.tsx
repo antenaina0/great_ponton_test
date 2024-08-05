@@ -1,19 +1,18 @@
 import styled from 'styled-components'
 
-interface BodyProps {
+interface H4Props {
     $weight?: number
     $color?: string
     $size?: string
     $lineHeight?: string
 }
 
-export const Body = styled.p<BodyProps>`
+export const H4 = styled.p<H4Props>`
     font-family: ${({ theme }) => theme.font.family.primary};
-    font-weight: ${({ theme, $weight }) =>
-        $weight || theme.font.weight.regular};
-    font-size: ${({ theme, $size }) => $size || theme.font.size.text};
+    font-weight: ${({ theme, $weight }) => $weight || theme.font.weight.semi};
+    font-size: ${({ theme, $size }) => $size || theme.font.size.h4};
     color: ${({ theme, $color }) => $color || theme.color.text};
     line-height: ${({ theme, $lineHeight }) =>
-        $lineHeight || theme.font.lineHeight.text};
+        $lineHeight || theme.font.lineHeight.h4};
     margin: 0;
 `
