@@ -19,8 +19,8 @@ export const BagLogo: React.FC<BagLogoProps> = (props) => {
 }
 
 const Container = styled.div`
-    width: 72px;
-    height: 72px;
+    min-width: 72px;
+    min-height: 72px;
     background-color: white;
     border-radius: 50%;
     display: flex;
