@@ -1,5 +1,7 @@
+import { DEFAULT_THEME } from '@styling/default.theme'
+import StyledComponentsRegistry from '@styling/registry'
 import type { Metadata } from 'next'
-import StyledComponentsRegistry from '../lib/registry'
+import { ThemeProvider } from 'styled-components'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -12,9 +14,13 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html>
+        <html lang="en">
             <body>
-                <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+                <StyledComponentsRegistry>
+                    <ThemeProvider theme={DEFAULT_THEME}>
+                        {children}
+                    </ThemeProvider>
+                </StyledComponentsRegistry>
             </body>
         </html>
     )
