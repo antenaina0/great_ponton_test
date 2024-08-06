@@ -7,7 +7,7 @@ interface H4Props {
     $lineHeight?: string
 }
 
-export const H4 = styled.p<H4Props>`
+export const H4 = styled.h4<H4Props>`
     font-family: ${({ theme }) => theme.font.family.primary};
     font-weight: ${({ theme, $weight }) => $weight || theme.font.weight.semi};
     font-size: ${({ theme, $size }) => $size || theme.font.size.h4};
@@ -15,4 +15,5 @@ export const H4 = styled.p<H4Props>`
     line-height: ${({ theme, $lineHeight }) =>
         $lineHeight || theme.font.lineHeight.h4};
     margin: 0;
+    padding: 0;
 `
