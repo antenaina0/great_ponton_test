@@ -21,9 +21,8 @@ export const personalInfo = z.object({
     phone: z.string({ message: REQUIRED_MESSAGE }).regex(Regex.phoneNumber, {
         message: 'Invalid phone number format',
     }),
-    password: z
-        .string({ message: REQUIRED_MESSAGE })
-        .regex(Regex.strongPassword, { message: 'Weak password' }),
+    password: z.string({ message: REQUIRED_MESSAGE }).min(8, 'Weak password'),
+    showProfile: z.boolean().default(false),
 })
 
 export type PersonalInfo = z.infer<typeof personalInfo>
