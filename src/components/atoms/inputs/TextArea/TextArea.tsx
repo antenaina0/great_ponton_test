@@ -1,5 +1,5 @@
 import { ShowIf } from '@components/atoms/utils/ShowIf'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 export interface TextAreaProps
@@ -9,14 +9,17 @@ export interface TextAreaProps
     error?: string
 }
 
-export const TextArea: React.FC<TextAreaProps> = (props) => {
+export const TextArea: React.FC<TextAreaProps> = forwardRef<
+    HTMLInputElement,
+    TextAreaProps
+>((props, ref) => {
     const { label, className, postfixElement, error, ...rest } = props
     const { name } = rest
 
     return (
         <Container className={className}>
             <InputBorder $error={!!error}>
-                <InnerInput {...rest} />
+                <InnerInput {...rest} ref={ref} />
                 {postfixElement}
             </InputBorder>
             <Label $error={!!error} htmlFor={name}>
@@ -27,7 +30,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
             </ShowIf>
         </Container>
     )
-}
+})
 
 const Container = styled.div`
     position: relative;
