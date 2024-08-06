@@ -2,23 +2,15 @@ import { Button } from '@components/atoms/buttons'
 import { TextArea } from '@components/atoms/inputs'
 import { Wrapper } from '@components/atoms/layout'
 import { Body, H4 } from '@components/atoms/typographies'
-import { ASSETS } from '@constants/assets'
 import { zodResolver } from '@hookform/resolvers/zod'
-import Image from 'next/image'
+
 import React from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import { PERSONAL_INFO_DEFAULT } from './default-values'
-import { personalInfo, PersonalInfo } from './personal-info.schema'
-
-const CheckIcon = (
-    <Image
-        src={ASSETS.icons.checkBadge}
-        alt="Check icon meaning correctness of input"
-        width={16}
-        height={16}
-    />
-)
+import { PERSONAL_INFO_DEFAULT } from './contants/default-values'
+import { CheckIcon } from './icons/CheckIcon'
+import { personalInfo, PersonalInfo } from './schemas/personal-info.schema'
+import { isValidEmail } from './utils/email-validator.util'
 
 export interface PersonalInfoFormProps {}
 
@@ -108,7 +100,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                                 label="Email"
                                 error={fieldState.error?.message}
                                 postfixElement={
-                                    !fieldState.invalid && CheckIcon
+                                    isValidEmail(field.value) && CheckIcon
                                 }
                             />
                         )}

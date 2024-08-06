@@ -1,4 +1,4 @@
-import { PersonalInfo } from './personal-info.schema'
+import { PersonalInfo } from '../schemas/personal-info.schema'
 
 export const PERSONAL_INFO_DEFAULT: PersonalInfo = {
     address: '',
@@ -9,4 +9,5 @@ export const PERSONAL_INFO_DEFAULT: PersonalInfo = {
     password: '',
     phone: '',
     postalCode: '',
+    showProfile: false,
 }
