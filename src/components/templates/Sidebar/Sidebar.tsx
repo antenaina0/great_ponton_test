@@ -32,6 +32,7 @@ const Container = styled.div`
     flex-direction: column;
     width: 240px;
     border-right: 1px solid ${({ theme }) => theme.color.border};
+    height: 100%;
 `
 
 const LogoWrapper = styled.div`
@@ -44,4 +45,5 @@ const NavBarWrapper = styled.div`
     border-top: 1px solid ${({ theme }) => theme.color.border};
     border-bottom: 1px solid ${({ theme }) => theme.color.border};
     padding: 8px 4px;
+    overflow-y: auto;
 `
