@@ -4,7 +4,7 @@ import { PersonalInfoForm } from './PersonalInfoForm'
 
 const StoryContainer = styled.div`
     height: 506px;
-    width: 392px;
+    width: 600px;
 `
 
 const meta: Meta<typeof PersonalInfoForm> = {
