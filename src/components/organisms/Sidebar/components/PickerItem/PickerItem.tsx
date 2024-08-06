@@ -4,11 +4,11 @@ import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import { PickerText } from './PickerText'
-import { getIconAttributes, PickerIcon } from './icon-attribute.utils'
+import { getIconAttributes, PickIcon } from './icon-attribute.utils'
 
 export interface PickerItemProps {
     label?: string
-    icon?: PickerIcon
+    icon?: PickIcon
     important?: boolean
     add?: boolean
 }

@@ -1,7 +1,7 @@
 import { ASSETS } from '@constants/assets'
 
 const { icons } = ASSETS
-export type PickerIcon =
+export type PickIcon =
     | 'clock'
     | 'drawer'
     | 'folders'
@@ -17,7 +17,7 @@ type Icon = {
     width?: number
 }
 
-const iconAttributeMap: Record<PickerIcon, Icon> = {
+const iconAttributeMap: Record<PickIcon, Icon> = {
     clock: {
         src: icons.clock,
         alt: 'Clock icon indicating history item',
@@ -54,4 +54,4 @@ const iconAttributeMap: Record<PickerIcon, Icon> = {
     },
 }
 
-export const getIconAttributes = (icon: PickerIcon) => iconAttributeMap[icon]
+export const getIconAttributes = (icon: PickIcon) => iconAttributeMap[icon]
