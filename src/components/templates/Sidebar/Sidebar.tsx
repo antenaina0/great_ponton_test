@@ -1,0 +1,41 @@
+'use client'
+import { Logo, NavBar, NavBarSubList } from '@components/organisms/Navbar'
+import React from 'react'
+import styled from 'styled-components'
+
+export interface SidebarProps {
+    sublists?: NavBarSubList[]
+}
+
+export const Sidebar: React.FC<SidebarProps> = (props) => {
+    const { sublists = [] } = props
+    return (
+        <Container>
+            <LogoWrapper>
+                <Logo />
+            </LogoWrapper>
+            <NavBarWrapper>
+                <NavBar subLists={sublists} />
+            </NavBarWrapper>
+        </Container>
+    )
+}
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    border-right: 1px solid ${({ theme }) => theme.color.border};
+`
+
+const LogoWrapper = styled.div`
+    height: 48px;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+`
+const NavBarWrapper = styled.div`
+    border-top: 1px solid ${({ theme }) => theme.color.border};
+    border-bottom: 1px solid ${({ theme }) => theme.color.border};
+    padding: 8px 4px;
+`
