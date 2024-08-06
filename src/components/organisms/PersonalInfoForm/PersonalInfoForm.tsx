@@ -1,6 +1,7 @@
+import { Button } from '@components/atoms/buttons'
 import { TextArea } from '@components/atoms/inputs'
 import { Wrapper } from '@components/atoms/layout'
-import { H4 } from '@components/atoms/typographies'
+import { Body, H4 } from '@components/atoms/typographies'
 import React from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
@@ -92,6 +93,11 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                         )}
                     />
                 </Wrapper>
+                <Body>
+                    Use this email to log in to your resumedone.io account and
+                    receive notifications.
+                </Body>
+                <Button type="submit">Save</Button>
             </Form>
         </Container>
     )
