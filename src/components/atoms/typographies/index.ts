@@ -1,5 +1,5 @@
-import { Body } from './Body/Body'
-import { H4 } from './H4/H4'
+import { H4 } from './H4'
 import { PickerText } from './PickerText'
+import { Text } from './Text'
 
-export { Body, H4, PickerText }
+export { H4, PickerText, Text }

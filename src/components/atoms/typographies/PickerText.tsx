@@ -1,5 +1,4 @@
-import { Body } from '@components/atoms/typographies'
-import { useTheme } from 'styled-components'
+import { Text } from '@components/atoms/typographies'
 
 interface PickerTextProps {
     children?: React.ReactNode
@@ -7,16 +6,9 @@ interface PickerTextProps {
 }
 
 export const PickerText: React.FC<PickerTextProps> = ({ children, bold }) => {
-    const { font } = useTheme()
-    const { size, weight, lineHeight } = font
-
     return (
-        <Body
-            $size={size.menuPicker}
-            $weight={bold ? weight.bold : weight.medium}
-            $lineHeight={lineHeight.menuPicker}
-        >
+        <Text $typography="menuPicker" $weight={bold ? 'bold' : 'medium'}>
             {children}
-        </Body>
+        </Text>
     )
 }
