@@ -2,17 +2,20 @@ import { Button } from '@components/atoms/buttons'
 import { TextArea } from '@components/atoms/inputs'
 import { Wrapper } from '@components/atoms/layout'
 import { Body, H4 } from '@components/atoms/typographies'
+import { zodResolver } from '@hookform/resolvers/zod'
 import React from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { PERSONAL_INFO_DEFAULT } from './default-values'
-import { PersonalInfo } from './personal-info.schema'
+import { personalInfo, PersonalInfo } from './personal-info.schema'
 
 export interface PersonalInfoFormProps {}
 
 export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
     const { control, handleSubmit } = useForm<PersonalInfo>({
         defaultValues: PERSONAL_INFO_DEFAULT,
+        resolver: zodResolver(personalInfo),
+        mode: 'onSubmit',
     })
 
     const onSubmit: SubmitHandler<PersonalInfo> = (data) => {
@@ -27,15 +30,23 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="firstName"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="First Name" />
+                        render={({ field, formState }) => (
+                            <TextArea
+                                {...field}
+                                label="First Name"
+                                error={formState.errors.firstName?.message}
+                            />
                         )}
                     />
                     <Controller
                         name="lastName"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="Last Name" />
+                        render={({ field, formState }) => (
+                            <TextArea
+                                {...field}
+                                label="Last Name"
+                                error={formState.errors.lastName?.message}
+                            />
                         )}
                     />
                 </Wrapper>
@@ -43,15 +54,23 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="city"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="City" />
+                        render={({ field, fieldState }) => (
+                            <TextArea
+                                {...field}
+                                label="City"
+                                error={fieldState.error?.message}
+                            />
                         )}
                     />
                     <Controller
                         name="postalCode"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="Postal Code" />
+                        render={({ field, fieldState }) => (
+                            <TextArea
+                                {...field}
+                                label="Postal Code"
+                                error={fieldState.error?.message}
+                            />
                         )}
                     />
                 </Wrapper>
@@ -59,8 +78,12 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="address"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="Address" />
+                        render={({ field, fieldState }) => (
+                            <TextArea
+                                {...field}
+                                label="Address"
+                                error={fieldState.error?.message}
+                            />
                         )}
                     />
                 </Wrapper>
@@ -68,15 +91,23 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="email"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="Email" />
+                        render={({ field, fieldState }) => (
+                            <TextArea
+                                {...field}
+                                label="Email"
+                                error={fieldState.error?.message}
+                            />
                         )}
                     />
                     <Controller
                         name="phone"
                         control={control}
-                        render={({ field }) => (
-                            <TextArea {...field} label="Phone" />
+                        render={({ field, fieldState }) => (
+                            <TextArea
+                                {...field}
+                                label="Phone"
+                                error={fieldState.error?.message}
+                            />
                         )}
                     />
                 </Wrapper>
@@ -84,11 +115,12 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="password"
                         control={control}
-                        render={({ field }) => (
+                        render={({ field, fieldState }) => (
                             <TextArea
                                 {...field}
                                 label="Password"
                                 type="password"
+                                error={fieldState.error?.message}
                             />
                         )}
                     />
