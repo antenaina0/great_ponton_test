@@ -1,13 +1,10 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-import { PickItem } from '../../interfaces/sidebar.interfaces'
+import { NavBarSubList } from '../../interfaces/nav-bar.interfaces'
 import { toPickItemProps } from '../../mappers/sidebar.mapper'
 import { PickerItem } from '../PickerItem/PickerItem'
 
-export interface SubListProps {
-    header: PickItem
-    list?: PickItem[]
-}
+export interface SubListProps extends NavBarSubList {}
 
 export const SubList: React.FC<SubListProps> = (props) => {
     const { header, list = [] } = props

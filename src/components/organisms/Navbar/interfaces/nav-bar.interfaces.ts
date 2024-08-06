@@ -13,3 +13,8 @@ export interface PickItem {
     title: string
     header?: boolean
 }
+
+export interface NavBarSubList {
+    header: PickItem
+    list?: PickItem[]
+}

@@ -1,6 +1,6 @@
 import { PickIcon } from '../components/PickerItem/icon-attribute.utils'
 import { PickerItemProps } from '../components/PickerItem/PickerItem'
-import { PickItem, PickItemType } from '../interfaces/sidebar.interfaces'
+import { PickItem, PickItemType } from '../interfaces/nav-bar.interfaces'
 
 const pickItemTypeToIconMap: Record<PickItemType, PickIcon> = {
     board: 'folders',

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import styled from 'styled-components'
-import { PickItem } from '../../interfaces/sidebar.interfaces'
+import { PickItem } from '../../interfaces/nav-bar.interfaces'
 import { SubList } from './SubList'
 
 const StoryContainer = styled.div`

@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PickItem } from '../../interfaces/sidebar.interfaces'
+import { NavBarSubList, PickItem } from '../../interfaces/nav-bar.interfaces'
 import { SubList } from '../SubList/SubList'
 
 export interface SidebarProps {
-    templates?: PickItem[]
-    suggestions?: PickItem[]
-    boards?: PickItem[]
+    subLists?: NavBarSubList[]
 }
 
 const BOARD_HEADER: PickItem = {
@@ -29,13 +27,13 @@ const TEMPLATE_HEADER: PickItem = {
     id: 'template1',
 }
 
-export const Sidebar: React.FC<SidebarProps> = (props) => {
-    const { boards, suggestions, templates } = props
+export const NavBar: React.FC<SidebarProps> = (props) => {
+    const { subLists = [] } = props
     return (
         <Container>
-            <SubList header={TEMPLATE_HEADER} list={templates} />
-            <SubList header={SEARCH_HEADER} list={suggestions} />
-            <SubList header={BOARD_HEADER} list={boards} />
+            {subLists.map((subList) => {
+                return <SubList {...subList} key={subList.header.id} />
+            })}
         </Container>
     )
 }
