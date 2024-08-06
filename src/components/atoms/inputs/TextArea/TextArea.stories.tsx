@@ -1,4 +1,6 @@
+import { ASSETS } from '@constants/assets'
 import { Meta, StoryObj } from '@storybook/react'
+import Image from 'next/image'
 import styled from 'styled-components'
 import { TextArea } from './TextArea'
 
@@ -34,5 +36,22 @@ export const Error: Story = {
         label: 'Email',
         value: 'wrong-stuff',
         error: 'Invalid email address',
+    },
+}
+
+const PostFixElement = (
+    <Image
+        src={ASSETS.icons.checkBadge}
+        alt="Check icon meaning correctness of input"
+        width={16}
+        height={16}
+    />
+)
+
+export const WithPostFixElement: Story = {
+    args: {
+        label: 'Email',
+        value: 'petter@gmail.com',
+        postfixElement: PostFixElement,
     },
 }

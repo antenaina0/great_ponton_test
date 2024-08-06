@@ -1,5 +1,6 @@
 export const ASSETS = {
     icons: {
+        checkBadge: '/icons/check-badge.svg',
         clock: '/icons/clock.svg',
         drawer: '/icons/drawer.svg',
         folders: '/icons/folders.png',
