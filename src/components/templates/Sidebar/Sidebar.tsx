@@ -1,14 +1,19 @@
 'use client'
+import {
+    AccountInNav,
+    AccountInNavProps,
+} from '@components/molecules/AccountInNav'
 import { Logo, NavBar, NavBarSubList } from '@components/organisms/Navbar'
 import React from 'react'
 import styled from 'styled-components'
 
 export interface SidebarProps {
     sublists?: NavBarSubList[]
+    account?: AccountInNavProps
 }
 
 export const Sidebar: React.FC<SidebarProps> = (props) => {
-    const { sublists = [] } = props
+    const { sublists = [], account } = props
     return (
         <Container>
             <LogoWrapper>
@@ -17,6 +22,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
             <NavBarWrapper>
                 <NavBar subLists={sublists} />
             </NavBarWrapper>
+            <AccountInNav {...account} />
         </Container>
     )
 }
