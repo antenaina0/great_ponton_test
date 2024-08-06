@@ -16,12 +16,14 @@ export const DEFAULT_THEME: DefaultTheme = {
             text: '15px',
             h4: '24px',
             h5: '17px',
+            label: '11px',
         },
         lineHeight: {
             menuPicker: '20px',
             text: '22px',
             h4: '30px',
             h5: '25px',
+            label: '14px',
         },
     },
     color: {
@@ -30,5 +32,7 @@ export const DEFAULT_THEME: DefaultTheme = {
         white: '#FFFFFF',
         green: '#008B5D',
         border: '#ECECED',
+        inputBorder: '#E3E3E4',
+        red: '#F25773',
     },
 }

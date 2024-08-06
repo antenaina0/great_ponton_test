@@ -6,7 +6,7 @@ export type FontFamily = {
     primary: string
 }
 
-export type Typography = 'text' | 'menuPicker' | 'h4' | 'h5'
+export type Typography = 'text' | 'menuPicker' | 'h4' | 'h5' | 'label'
 
 export type FontSize = Record<Typography, string>
 
@@ -19,7 +19,14 @@ export type Font = {
     lineHeight: LineHeight
 }
 
-export type Palette = 'primary' | 'text' | 'white' | 'green' | 'border'
+export type Palette =
+    | 'primary'
+    | 'text'
+    | 'white'
+    | 'green'
+    | 'border'
+    | 'inputBorder'
+    | 'red'
 
 export type Color = Record<Palette, string>
 
