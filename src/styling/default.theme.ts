@@ -29,5 +29,6 @@ export const DEFAULT_THEME: DefaultTheme = {
         text: '#4C4C55',
         white: '#FFFFFF',
         green: '#008B5D',
+        border: '#ECECED',
     },
 }

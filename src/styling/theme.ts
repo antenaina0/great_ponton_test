@@ -19,9 +19,9 @@ export type Font = {
     lineHeight: LineHeight
 }
 
-export type FontColor = 'primary' | 'text' | 'white' | 'green'
+export type Palette = 'primary' | 'text' | 'white' | 'green' | 'border'
 
-export type Color = Record<FontColor, string>
+export type Color = Record<Palette, string>
 
 declare module 'styled-components' {
     export interface DefaultTheme {
