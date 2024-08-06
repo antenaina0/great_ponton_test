@@ -1,10 +1,8 @@
 import { Button } from '@components/atoms/buttons'
 import { TextArea } from '@components/atoms/inputs'
 import { Wrapper } from '@components/atoms/layout'
-import { H4, Text } from '@components/atoms/typographies'
+import { H4, Text, TextLink } from '@components/atoms/typographies'
 import { zodResolver } from '@hookform/resolvers/zod'
-
-import Link from 'next/link'
 import React from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
@@ -134,9 +132,13 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                 </Wrapper>
                 <Text $weight="medium">
                     Use this email to log in to your{' '}
-                    <Link href="https://resumedone.co/" target="_blank">
+                    <TextLink
+                        href="https://resumedone.co/"
+                        target="_blank"
+                        $weight="medium"
+                    >
                         resumedone.io
-                    </Link>{' '}
+                    </TextLink>{' '}
                     account and receive notifications.
                 </Text>
                 <Button type="submit">Save</Button>
