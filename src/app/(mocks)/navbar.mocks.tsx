@@ -1,4 +1,6 @@
+import { AccountInNavProps } from '@components/molecules/AccountInNav'
 import { NavBarSubList, PickItem } from '@components/organisms/Navbar'
+import Image from 'next/image'
 import { BOARDS_MOCK } from './boards.mock'
 import { FAVORITES_MOCK } from './favorites.mock'
 import { HISTORIES_MOCK } from './histories.mock'
@@ -36,3 +38,17 @@ export const NAV_ITEMS: NavBarSubList[] = [
         list: BOARDS_MOCK,
     },
 ]
+
+const CarlaPicture = (
+    <Image
+        src="/mock-cdn/carla-small.png"
+        alt="Avatar image of Carla"
+        width={32}
+        height={32}
+    />
+)
+
+export const ACCOUNT: AccountInNavProps = {
+    username: 'Carla',
+    avatar: CarlaPicture,
+}
