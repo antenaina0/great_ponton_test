@@ -30,22 +30,22 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
                     <Controller
                         name="firstName"
                         control={control}
-                        render={({ field, formState }) => (
+                        render={({ field, fieldState }) => (
                             <TextArea
                                 {...field}
                                 label="First Name"
-                                error={formState.errors.firstName?.message}
+                                error={fieldState.error?.message}
                             />
                         )}
                     />
                     <Controller
                         name="lastName"
                         control={control}
-                        render={({ field, formState }) => (
+                        render={({ field, fieldState }) => (
                             <TextArea
                                 {...field}
                                 label="Last Name"
-                                error={formState.errors.lastName?.message}
+                                error={fieldState.error?.message}
                             />
                         )}
                     />
