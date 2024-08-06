@@ -1,5 +1,4 @@
-import { Body } from '@components/atoms/typographies/Body/Body'
-import { H4 } from '@components/atoms/typographies/H4/H4'
+import { Body, H4 } from '@components/atoms/typographies'
 import React from 'react'
 import styled, { useTheme } from 'styled-components'
 

@@ -1,9 +1,9 @@
+import { PickerText } from '@components/atoms/typographies'
 import { ShowIf } from '@components/atoms/utils/ShowIf'
 import { ASSETS } from '@constants/assets'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import { PickerText } from './PickerText'
 import { getIconAttributes, PickIcon } from './icon-attribute.utils'
 
 export interface PickerItemProps {

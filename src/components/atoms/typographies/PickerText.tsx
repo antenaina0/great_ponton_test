@@ -1,4 +1,4 @@
-import { Body } from '@components/atoms/typographies/Body/Body'
+import { Body } from '@components/atoms/typographies'
 import { useTheme } from 'styled-components'
 
 interface PickerTextProps {
