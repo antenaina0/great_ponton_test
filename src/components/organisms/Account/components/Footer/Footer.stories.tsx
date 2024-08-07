@@ -4,7 +4,7 @@ import { Footer } from './Footer'
 
 const StoryContainer = styled.div`
     height: 506px;
-    width: 392px;
+    width: 800px;
 `
 
 const meta: Meta<typeof Footer> = {

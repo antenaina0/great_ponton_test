@@ -37,5 +37,6 @@ export const DEFAULT_THEME: DefaultTheme = {
         red: '#F25773',
         link: '#1688FE',
         checkboxBorder: '#C4C4C7',
+        footerLink: '#595964',
     },
 }
