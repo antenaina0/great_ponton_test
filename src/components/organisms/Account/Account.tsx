@@ -6,10 +6,14 @@ import styled from 'styled-components'
 import { DeleteAccount } from './components/DeleteAccount/DeleteAccount'
 import { Footer } from './components/Footer/Footer'
 import { PersonalInfoForm } from './components/PersonalInfoForm'
+import { PersonalInfo } from './components/PersonalInfoForm/schemas/personal-info.schema'
 import { PremiumAd } from './components/PremiumAd'
 
 export interface AccountProps {
     onDelete?: () => void
+    onSubmit?: (data: PersonalInfo) => void
+    defaultValues?: PersonalInfo
+    avatarUrl?: string
 }
 
 export const Account: React.FC<AccountProps> = (props) => {
@@ -26,10 +30,13 @@ export const Account: React.FC<AccountProps> = (props) => {
         <Container>
             <PremiumAd />
             <FormAndAvatarWrapper>
-                <Form />
+                <Form
+                    defaultValues={props.defaultValues}
+                    onSubmit={props.onSubmit}
+                />
                 <AvatarWrapper>
                     <Image
-                        src="/mock-cdn/petter-avatar.png"
+                        src={props.avatarUrl || ''}
                         alt="Petter avatar"
                         width={144}
                         height={144}

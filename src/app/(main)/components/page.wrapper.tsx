@@ -6,7 +6,7 @@ import { Account } from '@components/organisms/Account'
 export default function PageWrapper() {
     return (
         <MainPageWrapper>
-            <Account />
+            <Account avatarUrl="/mock-cdn/petter-avatar.png" />
         </MainPageWrapper>
     )
 }
