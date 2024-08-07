@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-Make sure you have Node version 20 LTS and `npm` version of at least 10.8
+Make sure you have Node version 20 LTS and `npm` version of at least 10.8  
 First, run the development server:
 
 ```bash
