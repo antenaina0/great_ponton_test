@@ -62,10 +62,20 @@ const FormAndAvatarWrapper = styled.div`
     column-gap: 16px;
     width: 100%;
     flex-grow: 1;
+
+    @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 32px;
+    }
 `
 const AvatarWrapper = styled.div`
     height: 144px;
     width: 144px;
     border-radius: 50%;
     margin-top: 46px;
+
+    @media (max-width: 1024px) {
+        margin-top: 0;
+    }
 `
