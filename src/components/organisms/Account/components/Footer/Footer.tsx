@@ -8,8 +8,11 @@ export const Footer: React.FC<FooterProps> = (props) => {
     return (
         <Container>
             <Text $weight="medium">
-                Get in touch with our support team if you have any question or
-                want to leave some feedback. We’ll be happy to hear from you.
+                <TextLink href="/contact" $weight="medium">
+                    Get in touch with our support team
+                </TextLink>{' '}
+                if you have any question or want to leave some feedback. We’ll
+                be happy to hear from you.
             </Text>
             <LinksWrapper>
                 <Link href="/terms">Terms & Conditions</Link>
