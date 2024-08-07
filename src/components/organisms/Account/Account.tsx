@@ -1,5 +1,6 @@
 import { CheckBox } from '@components/atoms/inputs'
 import { Text } from '@components/atoms/typographies'
+import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import { DeleteAccount } from './components/DeleteAccount/DeleteAccount'
@@ -13,7 +14,18 @@ export const Account: React.FC<AccountProps> = (props) => {
     return (
         <Container>
             <PremiumAd />
-            <PersonalInfoForm />
+            <FormAndAvatarWrapper>
+                <Form />
+                <AvatarWrapper>
+                    <Image
+                        src="/mock-cdn/petter-avatar.png"
+                        alt="Petter avatar"
+                        width={144}
+                        height={144}
+                    />
+                </AvatarWrapper>
+            </FormAndAvatarWrapper>
+
             <ShowProfile>
                 <CheckBox />
                 <Text>
@@ -38,4 +50,22 @@ const ShowProfile = styled.div`
     flex-direction: row;
     align-items: center;
     column-gap: 8px;
+`
+
+const Form = styled(PersonalInfoForm)`
+    flex-grow: 1;
+`
+
+const FormAndAvatarWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    width: 100%;
+    flex-grow: 1;
+`
+const AvatarWrapper = styled.div`
+    height: 144px;
+    width: 144px;
+    border-radius: 50%;
+    margin-top: 46px;
 `
