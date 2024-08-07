@@ -29,6 +29,7 @@ export type Palette =
     | 'red'
     | 'link'
     | 'checkboxBorder'
+    | 'black'
 
 export type Color = Record<Palette, string>
 
