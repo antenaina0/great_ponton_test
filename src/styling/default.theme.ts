@@ -35,5 +35,6 @@ export const DEFAULT_THEME: DefaultTheme = {
         inputBorder: '#E3E3E4',
         red: '#F25773',
         link: '#1688FE',
+        checkboxBorder: '#C4C4C7',
     },
 }
