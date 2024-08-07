@@ -11,17 +11,21 @@ import { CheckIcon } from './icons/CheckIcon'
 import { personalInfo, PersonalInfo } from './schemas/personal-info.schema'
 import { isValidEmail } from './utils/email-validator.util'
 
-export interface PersonalInfoFormProps {}
+export interface PersonalInfoFormProps {
+    onSubmit?: (data: PersonalInfo) => void
+    defaultValues?: PersonalInfo
+}
 
 export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
+    const { defaultValues = PERSONAL_INFO_DEFAULT } = props
     const { control, handleSubmit } = useForm<PersonalInfo>({
-        defaultValues: PERSONAL_INFO_DEFAULT,
+        defaultValues,
         resolver: zodResolver(personalInfo),
         mode: 'onSubmit',
     })
 
     const onSubmit: SubmitHandler<PersonalInfo> = (data) => {
-        console.log(data)
+        props.onSubmit?.(data)
     }
     return (
         <Container>
