@@ -7,12 +7,22 @@ export interface CheckBoxProps
 export const CheckBox: React.FC<CheckBoxProps> = (props) => {
     const { type, ...rest } = props
     return (
-        <Border $checked={rest.checked}>
+        <Label>
             <Input type="checkbox" {...rest} />
-            <CheckMark />
-        </Border>
+            <Border $checked={rest.checked}>
+                <CheckMark $checked={rest.checked} />
+            </Border>
+        </Label>
     )
 }
+
+const Label = styled.label`
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+`
 
 const Input = styled.input`
     position: absolute;
@@ -29,6 +39,8 @@ const Border = styled.div<{ $checked?: boolean }>`
     border: 2px solid
         ${({ theme, $checked }) =>
             $checked ? theme.color.primary : theme.color.checkboxBorder};
+    background-color: ${({ theme, $checked }) =>
+        $checked ? theme.color.primary : theme.color.white};
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 300ms;
@@ -38,11 +50,10 @@ const Border = styled.div<{ $checked?: boolean }>`
     }
 
     input:checked ~ div {
-        background-color: ${({ theme }) => theme.color.primary};
     }
 `
 
-const CheckMark = styled.div`
+const CheckMark = styled.div<{ $checked?: boolean }>`
     transition-duration: 300ms;
     width: 100%;
     height: 100%;
