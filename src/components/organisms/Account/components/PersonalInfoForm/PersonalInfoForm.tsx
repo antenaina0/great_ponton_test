@@ -14,10 +14,11 @@ import { isValidEmail } from './utils/email-validator.util'
 export interface PersonalInfoFormProps {
     onSubmit?: (data: PersonalInfo) => void
     defaultValues?: PersonalInfo
+    className?: string
 }
 
 export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
-    const { defaultValues = PERSONAL_INFO_DEFAULT } = props
+    const { defaultValues = PERSONAL_INFO_DEFAULT, className } = props
     const { control, handleSubmit } = useForm<PersonalInfo>({
         defaultValues,
         resolver: zodResolver(personalInfo),
@@ -28,7 +29,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = (props) => {
         props.onSubmit?.(data)
     }
     return (
-        <Container>
+        <Container className={className}>
             <Heading>Personal Information</Heading>
 
             <Form onSubmit={handleSubmit(onSubmit)}>
