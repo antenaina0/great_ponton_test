@@ -1,5 +1,5 @@
 import { CheckBox } from '@components/atoms/inputs'
-import { Text } from '@components/atoms/typographies'
+import { Text, TextLink } from '@components/atoms/typographies'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
@@ -29,8 +29,11 @@ export const Account: React.FC<AccountProps> = (props) => {
             <ShowProfile>
                 <CheckBox />
                 <Text>
-                    Show my profile to serious employers on hirethesbest.io for
-                    free
+                    Show my profile to serious employers on{' '}
+                    <TextLink $color="link" href="https://hirethesbest.io">
+                        hirethesbest.io
+                    </TextLink>{' '}
+                    for free
                 </Text>
             </ShowProfile>
             <DeleteAccount />
