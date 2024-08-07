@@ -1,5 +1,5 @@
 import { AccountInNavProps } from '@components/molecules/AccountInNav'
-import { NavBarSubList, PickItem } from '@components/organisms/Navbar'
+import { NavBarSubList, PickItem } from '@components/organisms/Sidebar'
 import Image from 'next/image'
 import { BOARDS_MOCK } from './boards.mock'
 import { FAVORITES_MOCK } from './favorites.mock'

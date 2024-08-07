@@ -1,9 +1,8 @@
-'use client'
 import {
     AccountInNav,
     AccountInNavProps,
 } from '@components/molecules/AccountInNav'
-import { Logo, NavBar, NavBarSubList } from '@components/organisms/Navbar'
+import { Logo, NavBar, NavBarSubList } from '@components/organisms/Sidebar'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -31,6 +30,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 240px;
+    min-width: 240px;
     border-right: 1px solid ${({ theme }) => theme.color.border};
     height: 100%;
 `

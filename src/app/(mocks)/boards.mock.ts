@@ -1,4 +1,4 @@
-import { PickItem } from '@components/organisms/Navbar'
+import { PickItem } from '@components/organisms/Sidebar'
 
 export const BOARDS_MOCK: PickItem[] = [
     {
