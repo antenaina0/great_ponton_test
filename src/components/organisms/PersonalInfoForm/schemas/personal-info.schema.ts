@@ -22,7 +22,6 @@ export const personalInfo = z.object({
         message: 'Invalid phone number format',
     }),
     password: z.string({ message: REQUIRED_MESSAGE }).min(8, 'Weak password'),
-    showProfile: z.boolean().default(false),
 })
 
 export type PersonalInfo = z.infer<typeof personalInfo>

@@ -9,5 +9,4 @@ export const PERSONAL_INFO_DEFAULT: PersonalInfo = {
     password: '',
     phone: '',
     postalCode: '',
-    showProfile: false,
 }
