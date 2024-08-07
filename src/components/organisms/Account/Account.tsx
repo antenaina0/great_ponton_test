@@ -8,7 +8,9 @@ import { Footer } from './components/Footer/Footer'
 import { PersonalInfoForm } from './components/PersonalInfoForm'
 import { PremiumAd } from './components/PremiumAd'
 
-export interface AccountProps {}
+export interface AccountProps {
+    onDelete?: () => void
+}
 
 export const Account: React.FC<AccountProps> = (props) => {
     const [showProfile, setShowProfile] = useState<boolean>(false)
@@ -45,7 +47,7 @@ export const Account: React.FC<AccountProps> = (props) => {
                     for free
                 </Text>
             </ShowProfile>
-            <DeleteAccount />
+            <DeleteAccount onDelete={props.onDelete} />
             <Footer />
         </Container>
     )
