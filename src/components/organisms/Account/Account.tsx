@@ -1,7 +1,7 @@
 import { CheckBox } from '@components/atoms/inputs'
 import { Text, TextLink } from '@components/atoms/typographies'
 import Image from 'next/image'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { DeleteAccount } from './components/DeleteAccount/DeleteAccount'
 import { Footer } from './components/Footer/Footer'
@@ -11,6 +11,15 @@ import { PremiumAd } from './components/PremiumAd'
 export interface AccountProps {}
 
 export const Account: React.FC<AccountProps> = (props) => {
+    const [showProfile, setShowProfile] = useState<boolean>(false)
+
+    const onCheckShowProfile = useCallback(
+        (event: React.ChangeEvent<HTMLInputElement>) => {
+            setShowProfile(event.target.checked)
+        },
+        [],
+    )
+
     return (
         <Container>
             <PremiumAd />
@@ -27,7 +36,7 @@ export const Account: React.FC<AccountProps> = (props) => {
             </FormAndAvatarWrapper>
 
             <ShowProfile>
-                <CheckBox />
+                <CheckBox checked={showProfile} onChange={onCheckShowProfile} />
                 <Text>
                     Show my profile to serious employers on{' '}
                     <TextLink $color="link" href="https://hirethesbest.io">
